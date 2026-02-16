@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 725729991}
   - component: {fileID: 725729990}
   m_Layer: 5
-  m_Name: Right Plant Button
+  m_Name: Right Plant Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1159,7 +1159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: -7}
+  m_AnchoredPosition: {x: 110, y: 0}
   m_SizeDelta: {x: 70, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725729990
@@ -1208,6 +1208,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1503917333}
         m_TargetAssemblyTypeName: GrowingPlant, Assembly-CSharp
+        m_MethodName: UArrowRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4845530932133643821, guid: b64b9cfebcef6964aa9d017458b58e35, type: 3}
+        m_TargetAssemblyTypeName: FallingLeaves, Assembly-CSharp
         m_MethodName: UArrowRight
         m_Mode: 1
         m_Arguments:
@@ -1419,11 +1431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e789f72723284d14a84bb9b52768ed52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 1092221172}
   potText: {fileID: 278132134}
-  sprite1: {fileID: 8310752768603522028, guid: 3662a97cdce73b6438721e9cc78fa2a9, type: 3}
-  sprite2: {fileID: 9055863997953671947, guid: ae3435eb873794f4aad3d12f14a9fc6f, type: 3}
-  sprite3: {fileID: 8245305397469200176, guid: 7325cb2f51d34fb4da5e5c33ebff71db, type: 3}
+  sprite1: {fileID: -1887676302426921233, guid: a90bad6b82871a54cbdc77265af48816, type: 3}
+  sprite2: {fileID: 7201223113179374860, guid: 6f6f50e552c1fd94a905e93c21e125fc, type: 3}
+  sprite3: {fileID: 4463075984528353002, guid: b3a6a02ca765a864889a55bfb84a2dd5, type: 3}
 --- !u!212 &1092221172
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1468,7 +1479,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8310752768603522028, guid: 3662a97cdce73b6438721e9cc78fa2a9, type: 3}
+  m_Sprite: {fileID: -1887676302426921233, guid: a90bad6b82871a54cbdc77265af48816, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1489,7 +1500,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1768,6 +1779,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397860184}
   m_CullTransparentMesh: 1
+--- !u!1 &1431663283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431663285}
+  - component: {fileID: 1431663284}
+  m_Layer: 0
+  m_Name: Leaf Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1431663284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431663283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0815953d9f7794142bf3af9963473ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leafPrefab: {fileID: 1104506869533079855, guid: b64b9cfebcef6964aa9d017458b58e35, type: 3}
+  spawnedLeaf: {fileID: 0}
+  timerValue: 0
+  timerMax: 5
+  rotation: 1
+  speed: 1
+--- !u!4 &1431663285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431663283}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1503917332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,11 +1859,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f3542d68e8e014a955c72fbd38a472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 1503917334}
   plantText: {fileID: 209714281}
-  sprite1: {fileID: 1597492703415919409, guid: 1cffdeb695458b944b296b828067e758, type: 3}
-  sprite2: {fileID: -1813272262993250906, guid: a73cf436b11ed194ebda863ccd7e3e41, type: 3}
-  sprite3: {fileID: 7664051273582161203, guid: acf5e717689426c41b9b940f54bfd34a, type: 3}
+  sprite1: {fileID: 5960713649519986423, guid: 16c5ecbd691c7d84694eee5694912439, type: 3}
+  sprite2: {fileID: 6941706853065814016, guid: bba18a4882218714ea0f2d0d55f53c0a, type: 3}
+  sprite3: {fileID: 8390678095838365347, guid: 822afc3267f16d34db94b511d388304d, type: 3}
   plantGrowth: 0
 --- !u!212 &1503917334
 SpriteRenderer:
@@ -2181,6 +2241,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1503917333}
         m_TargetAssemblyTypeName: GrowingPlant, Assembly-CSharp
+        m_MethodName: UIArrowLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4845530932133643821, guid: b64b9cfebcef6964aa9d017458b58e35, type: 3}
+        m_TargetAssemblyTypeName: FallingLeaves, Assembly-CSharp
         m_MethodName: UIArrowLeft
         m_Mode: 1
         m_Arguments:
@@ -2641,3 +2713,4 @@ SceneRoots:
   - {fileID: 4284945}
   - {fileID: 1092221173}
   - {fileID: 1503917335}
+  - {fileID: 1431663285}
