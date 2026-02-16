@@ -25,17 +25,17 @@ public class ChangingPot : MonoBehaviour
         if (currentPot == 0)
         {
             sr.sprite = sprite1;
-            potText.text = "Current Pot: Default";
+            potText.text = "Current Pot: Brown";
         }
         else if (currentPot == 1)
         {
             sr.sprite = sprite2;
-            potText.text = "Current Pot: Pot 2";
+            potText.text = "Current Pot: Purple";
         }
         else if (currentPot == 2)
         {
             sr.sprite = sprite3;
-            potText.text = "Current Pot: Pot 3";
+            potText.text = "Current Pot: Green";
         }
     }
 

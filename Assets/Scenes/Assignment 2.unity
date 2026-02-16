@@ -664,8 +664,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503917333}
-        m_TargetAssemblyTypeName: GrowingPlant, Assembly-CSharp
+      - m_Target: {fileID: 1308472549}
+        m_TargetAssemblyTypeName: SpawningPlant, Assembly-CSharp
         m_MethodName: grow
         m_Mode: 1
         m_Arguments:
@@ -1206,7 +1206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503917333}
+      - m_Target: {fileID: 8828830438635937422, guid: 7bef8b580aa45e844bf03500d85e4e3a, type: 3}
         m_TargetAssemblyTypeName: GrowingPlant, Assembly-CSharp
         m_MethodName: UArrowRight
         m_Mode: 1
@@ -1339,8 +1339,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503917333}
-        m_TargetAssemblyTypeName: GrowingPlant, Assembly-CSharp
+      - m_Target: {fileID: 1308472549}
+        m_TargetAssemblyTypeName: SpawningPlant, Assembly-CSharp
         m_MethodName: resetPlant
         m_Mode: 1
         m_Arguments:
@@ -1421,9 +1421,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 1092221172}
   potText: {fileID: 278132134}
-  sprite1: {fileID: 8310752768603522028, guid: 3662a97cdce73b6438721e9cc78fa2a9, type: 3}
-  sprite2: {fileID: 9055863997953671947, guid: ae3435eb873794f4aad3d12f14a9fc6f, type: 3}
-  sprite3: {fileID: 8245305397469200176, guid: 7325cb2f51d34fb4da5e5c33ebff71db, type: 3}
+  sprite1: {fileID: -1887676302426921233, guid: a90bad6b82871a54cbdc77265af48816, type: 3}
+  sprite2: {fileID: 7201223113179374860, guid: 6f6f50e552c1fd94a905e93c21e125fc, type: 3}
+  sprite3: {fileID: 4463075984528353002, guid: b3a6a02ca765a864889a55bfb84a2dd5, type: 3}
 --- !u!212 &1092221172
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1468,7 +1468,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8310752768603522028, guid: 3662a97cdce73b6438721e9cc78fa2a9, type: 3}
+  m_Sprite: {fileID: -1887676302426921233, guid: a90bad6b82871a54cbdc77265af48816, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1488,8 +1488,56 @@ Transform:
   m_GameObject: {fileID: 1092221170}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1308472548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1308472550}
+  - component: {fileID: 1308472549}
+  m_Layer: 0
+  m_Name: Plant Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1308472549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308472548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ba88ff3ce97bc4bbe10dc724d61fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantPrefab: {fileID: 872093393950348965, guid: 7bef8b580aa45e844bf03500d85e4e3a, type: 3}
+  spawnedPlant: {fileID: 0}
+  plantScript: {fileID: 0}
+  plantGrowth: 0
+--- !u!4 &1308472550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308472548}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1768,112 +1816,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397860184}
   m_CullTransparentMesh: 1
---- !u!1 &1503917332
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1503917335}
-  - component: {fileID: 1503917334}
-  - component: {fileID: 1503917333}
-  m_Layer: 0
-  m_Name: Plant
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1503917333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503917332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f3542d68e8e014a955c72fbd38a472, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sr: {fileID: 1503917334}
-  plantText: {fileID: 209714281}
-  sprite1: {fileID: 1597492703415919409, guid: 1cffdeb695458b944b296b828067e758, type: 3}
-  sprite2: {fileID: -1813272262993250906, guid: a73cf436b11ed194ebda863ccd7e3e41, type: 3}
-  sprite3: {fileID: 7664051273582161203, guid: acf5e717689426c41b9b940f54bfd34a, type: 3}
-  plantGrowth: 0
---- !u!212 &1503917334
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503917332}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -5064401156898091283, guid: d0af11330ed425845acf5dac8d1b8b5e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.45, y: 1.49}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1503917335
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503917332}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1690128030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,7 +2121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503917333}
+      - m_Target: {fileID: 8828830438635937422, guid: 7bef8b580aa45e844bf03500d85e4e3a, type: 3}
         m_TargetAssemblyTypeName: GrowingPlant, Assembly-CSharp
         m_MethodName: UIArrowLeft
         m_Mode: 1
@@ -2640,4 +2582,4 @@ SceneRoots:
   - {fileID: 217070401}
   - {fileID: 4284945}
   - {fileID: 1092221173}
-  - {fileID: 1503917335}
+  - {fileID: 1308472550}
