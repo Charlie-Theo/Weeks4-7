@@ -43,7 +43,7 @@ public class ContactSensor : MonoBehaviour
             {
                 //we just left the hazard
                 //N: player has not tripped the sensor 
-                isInHazard = false;
+                //isInHazard = false;
                 Debug.Log("Exited the Hazard!");
 
                 onExitHazard.Invoke();
